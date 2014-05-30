@@ -11,6 +11,7 @@ namespace RawERD.Controllers
     {
         public ActionResult Index()
         {
+            #region using-add-data
             using (var dm = new DataModel())
             {
                 if (!dm.Roles.Any() && !dm.Users.Any())
@@ -65,6 +66,7 @@ namespace RawERD.Controllers
                 };
                 dm.SaveChanges();
             };
+            #endregion using-add-data
 
             return View();
         }

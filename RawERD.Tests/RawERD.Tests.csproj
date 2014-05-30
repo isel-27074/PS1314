@@ -92,6 +92,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RawERD.Data\RawERD.Data.csproj">
+      <Project>{fdb07d1d-d250-49dc-829f-d1078fa6fc8a}</Project>
+      <Name>RawERD.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RawERD\RawERD.csproj">
       <Project>{CBEF54C1-464C-49F6-AADC-6A8A884CA72F}</Project>
       <Name>RawERD</Name>
