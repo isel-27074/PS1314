@@ -28,6 +28,14 @@ namespace RawERD.Controllers
         public UserManager<ApplicationUser> UserManager { get; private set; }
 
         //
+        // GET: /Account/Index
+        [AllowAnonymous]
+        public ActionResult Index()
+        {
+            return RedirectToAction("Unauthorized","Error");
+        }
+
+        //
         // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
@@ -75,6 +83,40 @@ namespace RawERD.Controllers
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser() { UserName = model.UserName };
+                var result = await UserManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    await SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    AddErrors(result);
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        //
+        // GET: /Account/Recover
+        [AllowAnonymous]
+        public ActionResult Recover()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/Recover
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Recover(RecoverViewModel model)
         {
             if (ModelState.IsValid)
             {
