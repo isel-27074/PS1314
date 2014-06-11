@@ -1,8 +1,40 @@
-﻿@{
+﻿
+@using RawERD.Data
+@model IList<User>
+@{
+    IList<User> userList = Model;
     ViewBag.Title = "About";
-    ViewBag.Message = "What about?";
 }
-<h2>@ViewBag.Title</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="jumbotron">
+    <h1>@ViewBag.Title.</h1>
+    <p class="lead">@ViewBag.Message</p>
+    <p><a href="" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>ID</h2>
+        <p>
+            @foreach (User u in userList.ToList())
+            { @u.idUser<br /> }
+        </p>
+        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Username</h2>
+        <p>
+            @foreach (User u in userList.ToList())
+            { @u.username<br /> }
+        </p>
+        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Name</h2>
+        <p>
+            @foreach (User u in userList.ToList())
+            { @u.name<br /> }
+        </p>
+        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+    </div>
+</div>
