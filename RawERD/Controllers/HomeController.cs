@@ -11,6 +11,7 @@ namespace RawERD.Controllers
     {
         public ActionResult Index()
         {
+            /*
             #region using-add-data
             using (var dm = new DataModel())
             {
@@ -78,6 +79,8 @@ namespace RawERD.Controllers
             };
 
             return View(utilizadores);
+            */
+            return View();
         }
 
         public ActionResult About()
