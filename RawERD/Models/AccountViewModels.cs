@@ -7,7 +7,7 @@ namespace RawERD.Models
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
-    }
+    } //modelo usado para autenticação integrada com Google, FB, Twitter e etc.
 
     public class ManageUserViewModel
     {
@@ -43,11 +43,31 @@ namespace RawERD.Models
         public bool RememberMe { get; set; }
     }
 
+    public class ActivateViewModel
+    {
+        [Required]
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [Required]
+        [System.Web.Mvc.HiddenInput]
+        public int ActivationCode { get; set; }
+    }
+
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
+
+     //   [Required]
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -56,14 +76,33 @@ namespace RawERD.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Confirm Password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
+
+    //    [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email Address")]
+        public string Email { get; set; }
+    }
+
+    public class RemoveAccountViewModel
+    {
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Current Password")]
+        public string Password { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class RecoverViewModel
     {
-        [Required]
+        [Required] //??
         [Display(Name = "User name")]
         public string UserName { get; set; }
 

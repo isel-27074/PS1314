@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using RawERD.Data;
+using System.Data.Entity;
 
 namespace RawERD.Models
 {
@@ -9,9 +11,18 @@ namespace RawERD.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        //public ApplicationDbContext()
+        //    : base("DefaultConnection")
+        //{
+        //}
         public ApplicationDbContext()
-            : base("DefaultConnection")
+            : base("DataModel")
         {
         }
+
+        //Para ter acesso às minhas tabelas
+        public DbSet<User> _Users { get; set; }
+        public DbSet<Role> _Roles { get; set; }
+        public DbSet<Diagram> _Diagrams { get; set; }
     }
 }

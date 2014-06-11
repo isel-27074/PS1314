@@ -69,12 +69,6 @@ namespace RawERD.Controllers
             #endregion using-add-data
 
             ViewBag.Message = "Welcome to RawERD Project!";
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "RawERD database users:";
 
             IList<User> utilizadores;
 
@@ -86,9 +80,14 @@ namespace RawERD.Controllers
             return View(utilizadores);
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your RawERD team!";
+            //ViewBag.Message = "Your RawERD team!";
 
             return View();
         }
