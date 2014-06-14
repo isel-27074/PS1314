@@ -25,33 +25,33 @@ namespace RawERD.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult CriarEntidade()
-        {
-            return View();
-        }
+        //[HttpPost]
+        //public ActionResult CriarEntidade()
+        //{
+        //    return View();
+        //}
 
         public ActionResult CriarAtributo()
         {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult CriarAtributo()
-        {
-            return View();
-        }
+        //[HttpPost]
+        //public ActionResult CriarAtributo()
+        //{
+        //    return View();
+        //}
 
         public ActionResult CriarRelacao()
         {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult CriarRelacao()
-        {
-            return View();
-        }
+        //[HttpPost]
+        //public ActionResult CriarRelacao()
+        //{
+        //    return View();
+        //}
 
         #region MVC5 Controller with views using Entity Framework
 
