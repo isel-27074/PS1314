@@ -18,7 +18,43 @@ namespace RawERD.Controllers
         {
             return View();
         }
-        
+
+
+        public ActionResult CriarEntidade()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CriarEntidade()
+        {
+            return View();
+        }
+
+        public ActionResult CriarAtributo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CriarAtributo()
+        {
+            return View();
+        }
+
+        public ActionResult CriarRelacao()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CriarRelacao()
+        {
+            return View();
+        }
+
+        #region MVC5 Controller with views using Entity Framework
+
         // GET: Esquema
         public ActionResult Index()
         {
@@ -133,5 +169,7 @@ namespace RawERD.Controllers
             }
             base.Dispose(disposing);
         }
+
+        #endregion MVC5 Controller with views using Entity Framework
     }
 }
