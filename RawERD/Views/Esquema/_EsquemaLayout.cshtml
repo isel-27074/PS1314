@@ -37,7 +37,13 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    <script type="application/javascript" src='@Scripts.Url("js/bootstrap.js")' async></script>
+    <script type="application/javascript" src="js/joint.js" defer></script>
+    <script type="application/javascript" src="js/joint.shapes.erd.js" defer></script>
+    <script type="application/javascript" src="js/jquery-ui-1.10.4.js" defer></script>
+    <script type="application/javascript" src="js/rawerd.js" defer></script>
+    <script type="application/javascript" src="js/respond.js" defer></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
