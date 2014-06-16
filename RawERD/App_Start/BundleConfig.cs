@@ -20,28 +20,32 @@ namespace RawERD
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/joint").Include(
                       "~/Scripts/joint.js",
                       "~/Scripts/joint.shapes.erd.js",
-                      "~/Scripts/joint.min.js",
-                      "~/Scripts/joint.shapes.erd.min.js"));
+                      "~/Scripts/jquery-ui-{version}.js",
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/rawerd.js",
+                      "~/Scripts/respond.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
-                      "~/Scripts/jquery-ui-{version}.js"
-                      //,                       "~/Scripts/jquery-ui-1.10.4.min.js"
-                      ));
+            //bundles.Add(new ScriptBundle("~/bundles/joint").Include(
+            //          "~/Scripts/joint.min.js",
+            //          "~/Scripts/joint.shapes.erd.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/rawerd").Include(
-                      "~/Scripts/rawerd.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
+            //          "~/Scripts/jquery-ui-{version}.js"
+            //          //,                       "~/Scripts/jquery-ui-1.10.4.min.js"
+            //          ));
+
+            //bundles.Add(new ScriptBundle("~/bundles/rawerd").Include(
+            //          "~/Scripts/rawerd.js"));
             
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/joint.min.css"
+                      "~/Content/joint.min.css",
+                      "~/Content/joint.css",
+                      "~/Content/jquery-ui-{version}.css"
                       ));
         }
     }

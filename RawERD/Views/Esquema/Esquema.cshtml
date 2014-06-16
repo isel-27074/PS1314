@@ -8,3 +8,43 @@
     
 </div>
 
+<!--
+    <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/joint.css" />
+        <link rel="stylesheet" href="css/jquery-ui-1.10.4.css" />
+
+        <script type="application/javascript" src="js/bootstrap.js" async></script>
+        <script type="application/javascript" src="js/joint.js" defer></script>
+        <script type="application/javascript" src="js/joint.shapes.erd.js" defer></script>
+        <script type="application/javascript" src="js/jquery-ui-1.10.4.js" defer></script>
+        <script type="application/javascript" src="js/rawerd.js" defer></script>
+
+-->
+
+<nav class="navbar navbar-default navbar-static-top navbar-left" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="#">RawERD</a>
+        <button id="addEntity" type="button" class="btn btn-default navbar-btn">Adicionar Entidade</button>
+        <button id="addAttribute" type="button" class="btn btn-default navbar-btn">Adicionar Atributo</button>
+    </div>
+</nav>
+
+<div id="dialogNewEntity" title="Nova Entidade">
+    <div>
+        <label for="txbEntityName">Nome: </label>
+        <input type="text" id="txbEntityName" />
+    </div>
+</div>
+
+<div id="dialogAddAttribute" title="Novo Atributo">
+    <div>
+        <label for="cmbEntities">Entidade:</label>
+        <select id="cmbEntities" style="width: 100px" />
+    </div>
+    <div>
+        <label for="txbAttributeName">Entidade:</label>
+        <input type="text" id="txbAttributeName" />
+    </div>
+</div>
+
+<div id="paper"></div>

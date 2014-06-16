@@ -78,6 +78,15 @@
             autoOpen: false,
             buttons: {
                 "Ok": function() {
+                    var selectedEntityName = $("#cmbEntities option:selected").text();
+                    for(var i = 0; i < Model.entities.length; ++i) {
+                        var entity = Model.entities[i];
+                        if (entity.name == selectedEntityName) {
+                            entity.addAttribute($("#attributeName").val());
+                            var nameEl = element(erd.Normal, 75, 30, "name");
+                        }
+                    }
+
                     var entity = new Entity($("#txbEntityName").val());
                     Model.entities.push(entity);
                     element(erd.Entity, 100, 200, entity.name);
