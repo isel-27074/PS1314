@@ -394,6 +394,7 @@ namespace RawERD.Controllers
             if (user != null)
             {
                 return user.PasswordHash != null;
+                //return user.Password != null;
             }
             return false;
         }

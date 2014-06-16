@@ -24,8 +24,19 @@ namespace RawERD
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/joint").Include(
+                      "~/Scripts/joint.js",
+                      "~/Scripts/joint.shapes.erd.js",
                       "~/Scripts/joint.min.js",
                       "~/Scripts/joint.shapes.erd.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
+                      "~/Scripts/jquery-ui-{version}.js"
+                      //,                       "~/Scripts/jquery-ui-1.10.4.min.js"
+                      ));
+
+            bundles.Add(new ScriptBundle("~/bundles/rawerd").Include(
+                      "~/Scripts/rawerd.js"));
+            
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

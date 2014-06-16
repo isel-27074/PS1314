@@ -1,3 +1,5 @@
+using Microsoft.AspNet.Identity;
+
 namespace RawERD.Data
 {
     using System;
@@ -7,7 +9,7 @@ namespace RawERD.Data
     using System.Data.Entity.Spatial;
 
     [Table("User")]
-    public partial class User
+    public partial class User : IUser
     {
         public User()
         {
@@ -16,29 +18,36 @@ namespace RawERD.Data
         }
 
         [Key]
-        public int idUser { get; set; }
+        [Column("idUser")]
+        public string Id { get; set; }
 
         [Required]
         [StringLength(45)]
-        public string username { get; set; }
+        [Column("username")]
+        public string UserName { get; set; }
 
         [Required]
         [StringLength(45)]
-        public string password { get; set; }
+        [Column("password")]
+        public string Password { get; set; }
 
         [Required]
         [StringLength(45)]
-        public string name { get; set; }
+        [Column("name")]
+        public string Name { get; set; }
 
         [Required]
         [StringLength(45)]
-        public string email { get; set; }
+        [Column("email")]
+        public string Email { get; set; }
 
         [Required]
         [StringLength(45)]
-        public string activationCode { get; set; }
+        [Column("activationCode")]
+        public string ActivationCode { get; set; }
 
-        public bool active { get; set; }
+        [Column("active")]
+        public bool Active { get; set; }
 
         public virtual ICollection<Diagram> Diagrams { get; set; }
 

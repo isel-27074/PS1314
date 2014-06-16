@@ -36,23 +36,23 @@ namespace RawERD.Data
                 .Map(m => m.ToTable("UserRole").MapLeftKey("idRole").MapRightKey("idUser"));
 
             modelBuilder.Entity<User>()
-                .Property(e => e.username)
+                .Property(e => e.UserName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.password)
+                .Property(e => e.Password)
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.name)
+                .Property(e => e.Name)
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.email)
+                .Property(e => e.Email)
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.activationCode)
+                .Property(e => e.ActivationCode)
                 .IsUnicode(false);
         }
     }

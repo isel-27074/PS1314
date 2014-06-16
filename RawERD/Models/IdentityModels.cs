@@ -12,6 +12,7 @@ namespace RawERD.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     //public class ApplicationDbContext : RawERDDbContext<ApplicationUser>
+    //public class ApplicationDbContext : DataModel
     {
         //public ApplicationDbContext()
         //    : base("DefaultConnection")

@@ -39,12 +39,12 @@ namespace RawERD.Controllers
 
                     User ricardo = new User
                     {
-                        name = "Ricardo",
-                        username = "Gambas",
-                        password = "1234",
-                        activationCode = "1234",
-                        active = true,
-                        email = "ricardo.marta@gmail.com"
+                        Name = "Ricardo",
+                        UserName = "Gambas",
+                        Password = "123456",
+                        ActivationCode = "1234",
+                        Active = true,
+                        Email = "ricardo.marta@gmail.com"
                     };
                     ricardo.Roles.Add(convidado);
                     ricardo.Roles.Add(utilizador);
@@ -52,12 +52,12 @@ namespace RawERD.Controllers
 
                     User luis = new User
                     {
-                        name = "Luis",
-                        username = "Bras",
-                        password = "1234",
-                        activationCode = "1234",
-                        active = true,
-                        email = "lbras@lbras.net"
+                        Name = "Luis",
+                        UserName = "Bras",
+                        Password = "123456",
+                        ActivationCode = "1234",
+                        Active = true,
+                        Email = "lbras@lbras.net"
                     };
                     luis.Roles.Add(convidado);
                     luis.Roles.Add(utilizador);

@@ -11,14 +11,14 @@ namespace RawERD
 {
     public class RawERDDbContext<TUser> : DbContext where TUser : User
     {
-    //    public RawERDDbContext();
-    //    public RawERDDbContext(string nameOrConnectionString);
+        //public RawERDDbContext();
+        //public RawERDDbContext(string nameOrConnectionString);
 
-    //    public virtual IDbSet<Role> Roles { get; set; }
-    //    public virtual IDbSet<TUser> Users { get; set; }
+        //public virtual IDbSet<Role> Roles { get; set; }
+        //public virtual IDbSet<TUser> Users { get; set; }
 
-    //    protected override void OnModelCreating(DbModelBuilder modelBuilder);
-    //    protected override DbEntityValidationResult ValidateEntity(DbEntityEntry entityEntry, IDictionary<object, object> items);
-    //
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder);
+        //protected override DbEntityValidationResult ValidateEntity(DbEntityEntry entityEntry, IDictionary<object, object> items);
+    
     }
 }
