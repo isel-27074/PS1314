@@ -11,6 +11,10 @@ namespace RawERD
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
+                      "~/Scripts/jquery-ui-{version}.js"
+                      ));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
@@ -19,32 +23,22 @@ namespace RawERD
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/joint").Include(
+                      "~/Scripts/joint.nojquery.js",
+                      "~/Scripts/joint.shapes.erd.js"));
+            
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/joint.js",
-                      "~/Scripts/joint.shapes.erd.js",
-                      "~/Scripts/jquery-ui-{version}.js",
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/rawerd.js",
                       "~/Scripts/respond.js"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/joint").Include(
-            //          "~/Scripts/joint.min.js",
-            //          "~/Scripts/joint.shapes.erd.min.js"));
-
-            //bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
-            //          "~/Scripts/jquery-ui-{version}.js"
-            //          //,                       "~/Scripts/jquery-ui-1.10.4.min.js"
-            //          ));
-
-            //bundles.Add(new ScriptBundle("~/bundles/rawerd").Include(
-            //          "~/Scripts/rawerd.js"));
-            
+            bundles.Add(new ScriptBundle("~/bundles/rawerd").Include(
+                      "~/Scripts/rawerd.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/joint.min.css",
-                      "~/Content/joint.css",
+                      "~/Content/joint.nojquery.min.css",
+                      "~/Content/joint.nojquery.css",
                       "~/Content/jquery-ui-{version}.css"
                       ));
         }

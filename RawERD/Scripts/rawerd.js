@@ -26,43 +26,17 @@
             return myLink;
         };
 
-        var employee = element(erd.Entity, 100, 200, "Employee");
-        var salesman = element(erd.Entity, 100, 400, "Salesman");
-        var wage = element(erd.WeakEntity, 530, 200, "Wage");
-        var paid = element(erd.IdentifyingRelationship, 350, 190, "gets paid");
-        var isa = element(erd.ISA, 125, 300, "ISA");
-        var number = element(erd.Key, 0, 90, "number");
-        var nameEl = element(erd.Normal, 75, 30, "name");
-        var skills = element(erd.Multivalued, 150, 90, "skills");
-        var amount = element(erd.Derived, 440, 80, "amount");
-        var date = element(erd.Normal, 590, 80, "date");
-        var plate = element(erd.Key, 405, 500, "plate");
-        var car = element(erd.Entity, 430, 400, "Company car");
-        var uses = element(erd.Relationship, 300, 390, "uses");
-
-        link(employee, paid).cardinality('1');
-        link(employee, number);
-        link(employee, nameEl);
-        link(employee, skills);
-        link(employee, isa);
-        link(isa, salesman);
-        link(salesman, uses).cardinality('0..1');
-        link(car, uses).cardinality('1..1');
-        link(car, plate);
-        link(wage, paid).cardinality('N');
-        link(wage, amount);
-        link(wage, date);
-
         $("#dialogNewEntity").dialog({
             resizable: false,
-            height:140,
+            height:400,
+            width: 600,
             modal: true,
             autoOpen: false,
             buttons: {
                 "Ok": function() {
                     var entity = new Entity($("#txbEntityName").val());
                     Model.entities.push(entity);
-                    element(erd.Entity, 100, 200, entity.name);
+                    entity.element = element(erd.Entity, 100, 200, entity.name);
                     $(this).dialog("close");
                 },
                 "Cancelar": function() {
@@ -73,23 +47,25 @@
 
         $("#dialogAddAttribute").dialog({
             resizable: false,
-            height:140,
+            height:400,
+            width: 600,
             modal: true,
             autoOpen: false,
             buttons: {
                 "Ok": function() {
                     var selectedEntityName = $("#cmbEntities option:selected").text();
+                    var entity;
                     for(var i = 0; i < Model.entities.length; ++i) {
-                        var entity = Model.entities[i];
+                        entity = Model.entities[i];
                         if (entity.name == selectedEntityName) {
-                            entity.addAttribute($("#attributeName").val());
-                            var nameEl = element(erd.Normal, 75, 30, "name");
+                            break;
                         }
                     }
 
-                    var entity = new Entity($("#txbEntityName").val());
-                    Model.entities.push(entity);
-                    element(erd.Entity, 100, 200, entity.name);
+                    var attributeName = $("#txbAttributeName").val();
+                    entity.addAttribute(attributeName);
+                    var attribute = element(erd.Normal, 75, 30, attributeName);
+                    link(entity.element, attribute);
                     $(this).dialog("close");
                 },
                 "Cancelar": function() {
@@ -125,12 +101,13 @@
      * Entity constructor.
      * @param name Entity name.
      */
-    function Entity(name) {
+    function Entity(name, element) {
 
         this.id = 0;
         this.name = name;
         this.attributes = [];
         this.associations = [];
+        this.element = element;
     }
 
     Entity.create = function(name) {

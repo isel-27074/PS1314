@@ -196,6 +196,8 @@
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\joint.css" />
     <Content Include="Content\joint.min.css" />
+    <Content Include="Content\joint.nojquery.css" />
+    <Content Include="Content\joint.nojquery.min.css" />
     <Content Include="Content\jquery-ui-1.10.4.css" />
     <Content Include="Content\jquery-ui-1.10.4.min.css" />
     <Content Include="favicon.ico" />
@@ -208,6 +210,8 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\joint.js" />
     <Content Include="Scripts\joint.min.js" />
+    <Content Include="Scripts\joint.nojquery.js" />
+    <Content Include="Scripts\joint.nojquery.min.js" />
     <Content Include="Scripts\joint.shapes.erd.js" />
     <Content Include="Scripts\joint.shapes.erd.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
